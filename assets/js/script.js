@@ -4,9 +4,36 @@ import {translations, getUserLanguage} from "../../lang/translation.js";
 import config from "./../../config/config.js";
 
 // focus the search input as the DOM loads
+var title = document.getElementsByTagName('title')[0];
+
 window.onload = function() {
   document.getElementsByName("search-bar")[0].focus();
+  title.innerText = 'Loading txtes';
+
+  setTimeout(function(){
+    title.innerText = 'Weather App';
+  },1000);
 }
+
+
+if (window.performance) {
+  console.info("window.performance works fine on this browser");
+}
+console.info(performance.navigation.type);
+if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+  console.info( "This page is reloaded" );
+  title.innerText = 'Loading ... res';
+  setTimeout(function(){
+    title.innerText = 'Weather App 2222';
+  },1000);
+
+
+} else {
+  console.info( "This page is not reloaded");
+}
+
+
+
 
 const userLang = getUserLanguage() || "en-US";
 const place = document.querySelector("#place");

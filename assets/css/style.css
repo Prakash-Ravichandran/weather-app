@@ -495,8 +495,11 @@ footer{
 
 
 .link1{
-  max-width: 7%;
-  max-height:7%;
+  width: 100%;
+  /* max-width: 7%;
+  max-height:7%; */
+   height: 10px;
+   width: 25px;
    padding: 0.5rem 1rem;
    box-sizing: border-box; 
    display: inline;
@@ -562,6 +565,7 @@ html body #scroll-btn {
   border-radius: 50%;
   font: bold 20px monospace;
   transition: opacity 0.5s, transform 0.5s;
+  z-index: 999;
 
 }
 
